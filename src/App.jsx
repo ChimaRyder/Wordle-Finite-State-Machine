@@ -61,9 +61,9 @@ function App() {
   const handleState = (s) => {
     switch (s) {
       case "Start":
-        setState("AwaitLetter")
+        setState("AwaitWord")
         break;
-      case "AwaitLetter":
+      case "AwaitWord":
         if (guess.length === 5) {
           setState("EvaluateWord")
         }
@@ -81,13 +81,13 @@ function App() {
             break;
           }
         } else {
-          setState("AwaitLetter")
+          setState("AwaitWord")
           break;
         }
       case "IncorrectWord":
         if (guessesCount > 0) {
           setGuessesCount(guessesCount-1)
-          setState("AwaitLetter")
+          setState("AwaitWord")
         } else {
           setState("GameOver")
         }
